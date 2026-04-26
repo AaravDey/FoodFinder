@@ -1,6 +1,7 @@
 {
-  "name": "foodfinder",
+   "name": "foodfinder",
   "version": "1.0.0",
+  "homepage": "https://AaravDey.github.io/FoodFinder"
   "private": true,
   "dependencies": {
     "react": "^18.2.0",
