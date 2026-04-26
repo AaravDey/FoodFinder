@@ -1,0 +1,179 @@
+.dietary-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 24px;
+  background: var(--bg);
+}
+
+.dietary-container {
+  max-width: 760px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  animation: fadeUp 0.5s ease both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.dietary-header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.quiet-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.label-icon {
+  font-size: 13px;
+}
+
+.dietary-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 400;
+  color: var(--text-dark);
+  line-height: 1.15;
+}
+
+.dietary-subtitle {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  color: var(--text-mid);
+  line-height: 1.65;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.dietary-card {
+  width: 100%;
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  padding: 40px;
+}
+
+.dietary-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.column-title {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+}
+
+.checkbox-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.checkbox-row input[type="checkbox"] {
+  display: none;
+}
+
+.checkbox-custom {
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid var(--border);
+  border-radius: 4px;
+  background: var(--white);
+  flex-shrink: 0;
+  position: relative;
+  transition: all 0.15s ease;
+}
+
+.checkbox-row input:checked + .checkbox-custom {
+  background: var(--text-dark);
+  border-color: var(--text-dark);
+}
+
+.checkbox-row input:checked + .checkbox-custom::after {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  width: 5px;
+  height: 9px;
+  border: 2px solid white;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg);
+}
+
+.checkbox-label {
+  font-size: 14px;
+  color: var(--text-mid);
+  line-height: 1.4;
+}
+
+.no-restrictions-note {
+  font-size: 13px;
+  color: var(--text-light);
+  font-style: italic;
+}
+
+.continue-btn {
+  background: var(--text-dark);
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 16px 36px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 20px rgba(42, 33, 24, 0.25);
+}
+
+.continue-btn:hover {
+  background: var(--text-mid);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 28px rgba(42, 33, 24, 0.3);
+}
+
+.btn-arrow {
+  font-size: 16px;
+}
+
+@media (max-width: 640px) {
+  .dietary-columns {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .dietary-card {
+    padding: 28px 24px;
+  }
+}
